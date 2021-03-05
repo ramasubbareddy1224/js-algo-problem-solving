@@ -23,7 +23,7 @@ console.log(findNextIndexValue(items, 4)); // 20
 
 // find current index element in circular array
 function findPreviousIndexValue(array, index) {
-    const calcIndex = (index + array.length - 1) % array.length;
+    const calcIndex = ((index % array.length ) + array.length - 1) % array.length;
     return array[calcIndex];
 }
 
