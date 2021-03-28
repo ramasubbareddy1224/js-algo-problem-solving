@@ -1,4 +1,4 @@
-let s = "abcd";
+let s = "abbcd";
 // with object
 function IsUnique(s) {
     let res = {};
@@ -24,7 +24,22 @@ function IsUnique(s) {
         } else {
             res[s[i]] = 1;
         }
-    }   
+    }
     return true;
 }
 console.log(IsUnique(s))
+
+// without additinal data structure
+function IsUniqueWithArray(s) {
+    let res = new Array(128); // a=97, A=65
+    for (let i = 0; i < s.length; i++) {
+        const code = s.charCodeAt(i);
+        if (res[code] !== undefined) {
+            return false;
+        } else {
+            res[code] = true;
+        }
+    }
+    return true;
+}
+console.log(IsUniqueWithArray(s))
