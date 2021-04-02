@@ -1,3 +1,4 @@
+// Check given two strings are permutation of each other (i.e. check both has same no.of characters in any order)
 function IsStringPermutation(s1 = "rama", s2 = "amra") {
     let array = new Array(128);
 

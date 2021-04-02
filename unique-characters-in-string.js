@@ -1,6 +1,7 @@
-let s = "abbcd";
+let args = process.argv.slice(2);
+let s=args[0]
 // with object
-function IsUnique(s) {
+function IsUnique(s="abbcd") {
     let res = {};
     for (let i = 0; i < s.length; i++) {
         res[s[i]] = (res[s[i]] || 0) + 1
@@ -16,7 +17,7 @@ console.log(IsUnique(s))
 
 // with Improved
 
-function IsUnique(s) {
+function IsUnique(s="abbcd") {
     let res = {};
     for (let i = 0; i < s.length; i++) {
         if (res[s[i]]) {
@@ -30,7 +31,7 @@ function IsUnique(s) {
 console.log(IsUnique(s))
 
 // without additinal data structure
-function IsUniqueWithArray(s) {
+function IsUniqueWithArray(s="abbcd") {
     let res = new Array(128); // a=97, A=65
     for (let i = 0; i < s.length; i++) {
         const code = s.charCodeAt(i);
